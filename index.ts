@@ -1,8 +1,6 @@
-import dotenv from "dotenv"
+import "dotenv/config"
 import fastify from "fastify"
-import { routes } from "./src/routes/called.routes"
-
-dotenv.config()
+import { routes } from "./src/routes/@.routes"
 
 const Fastify = fastify()
 
