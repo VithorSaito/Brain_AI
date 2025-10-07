@@ -1,6 +1,7 @@
-import { FastifyReply, FastifyRequest } from "fastify";
 import z from "zod";
-import { CalledUseCase } from "../../usecases/calledUseCases/called.usecases";
+import { FastifyReply, FastifyRequest } from "fastify";
+
+import { CalledUseCase } from "../../usecases/calledUseCases/calledUsecases";
 
 export class CalledController {
   constructor(private calledUseCase: CalledUseCase) { }
@@ -9,10 +10,13 @@ export class CalledController {
 
     const bodySchema = z.object({
       title: z.string(),
-      description: z.string(),
-      response: z.string()
+      category: z.string(),
+      environment: z.string(),
+      problem: z.string(),
+      cause: z.string(),
+      solution: z.string(),
+      status: z.string()
     }).parse(request.body)
-
 
     const result = await this.calledUseCase.execute(bodySchema)
 

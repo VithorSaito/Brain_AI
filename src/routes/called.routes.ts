@@ -1,7 +1,8 @@
 import { FastifyInstance } from "fastify";
+
 import { calledController } from "../controller/calledController";
 
-export const routes = async (server: FastifyInstance) => {
+export const calledRoutes = async (server: FastifyInstance) => {
 
   server
     .post("/called", async (request, reply) => {

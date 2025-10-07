@@ -11,6 +11,10 @@ model called {
   id          Int                    @id @default(autoincrement())
   embedding   Unsupported("vector")?
   title       String?                @db.VarChar(255)
-  description String?
-  response    String?
+  category    String?
+  environment String?
+  problem     String?
+  cause       String?
+  solution    String?
+  status      String?                @db.VarChar(255)
 }
