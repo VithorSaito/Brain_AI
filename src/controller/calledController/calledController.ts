@@ -20,7 +20,7 @@ export class CalledController {
 
     const result = await this.calledUseCase.execute(bodySchema)
 
-    return reply.send(result).status(200)
+    return reply.send(result).status(201)
 
   }
 }
