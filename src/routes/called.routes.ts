@@ -1,7 +1,7 @@
 import { FastifyInstance } from "fastify";
 
 import { calledController } from "../controller/calledController";
-import { sendInformationController } from "../controller/sendInformationController";
+import { questionController } from "../controller/questionController";
 
 export const calledRoutes = async (server: FastifyInstance) => {
 
@@ -12,8 +12,8 @@ export const calledRoutes = async (server: FastifyInstance) => {
       return result
 
     })
-    .post("/send_information", async (request, reply) => {
-      const result = await sendInformationController.execute(request, reply)
+    .post("/question", async (request, reply) => {
+      const result = await questionController.execute(request, reply)
 
       return result
     })
