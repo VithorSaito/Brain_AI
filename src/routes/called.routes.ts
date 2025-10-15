@@ -6,7 +6,7 @@ import { knowledgeBaseController } from "../controller/knowledgeBaseController";
 export const calledRoutes = async (server: FastifyInstance) => {
 
   server
-    .post("/knowledge", async (request, reply) => {
+    .post("/knowledgeBase", async (request, reply) => {
       const result = await knowledgeBaseController.execute(request, reply)
 
       return result
