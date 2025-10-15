@@ -1,10 +1,10 @@
 import z from "zod";
 import { FastifyReply, FastifyRequest } from "fastify";
+import { KnowledgeBaseUseCase } from "../../usecases/knowledgeBaseUseCase/knowledgeBaseUsecase";
 
-import { CalledUseCase } from "../../usecases/calledUseCases/calledUsecases";
 
-export class CalledController {
-  constructor(private calledUseCase: CalledUseCase) { }
+export class KnowledgeBaseController {
+  constructor(private knowledgeBaseUseCase: KnowledgeBaseUseCase) { }
 
   async execute(request: FastifyRequest, reply: FastifyReply) {
 
@@ -18,7 +18,7 @@ export class CalledController {
       status: z.string()
     }).parse(request.body)
 
-    const result = await this.calledUseCase.execute(bodySchema)
+    const result = await this.knowledgeBaseUseCase.execute(bodySchema)
 
     return reply.send(result).status(201)
 

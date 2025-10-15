@@ -1,7 +1,7 @@
 import { poll } from "../../lib/aws"
 import { openai } from "../../lib/openai"
 
-export class CalledUseCase {
+export class KnowledgeBaseUseCase {
   constructor() { }
 
   async execute(data: KnowLedgeBaseDTO) {

@@ -7,7 +7,7 @@ interface RowsResponse {
   similarity: string
 }
 
-export class SendInformationUseCase {
+export class QuestionUseCase {
   constructor() { }
 
   async execute(question: string) {

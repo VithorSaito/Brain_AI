@@ -1,19 +1,19 @@
 import { FastifyInstance } from "fastify";
 
-import { calledController } from "../controller/calledController";
-import { sendInformationController } from "../controller/sendInformationController";
+import { questionController } from "../controller/questionController";
+import { knowledgeBaseController } from "../controller/knowledgeBaseController";
 
 export const calledRoutes = async (server: FastifyInstance) => {
 
   server
-    .post("/knowledge", async (request, reply) => {
-      const result = await calledController.execute(request, reply)
+    .post("/knowledgeBase", async (request, reply) => {
+      const result = await knowledgeBaseController.execute(request, reply)
 
       return result
 
     })
-    .post("/send_information", async (request, reply) => {
-      const result = await sendInformationController.execute(request, reply)
+    .post("/question", async (request, reply) => {
+      const result = await questionController.execute(request, reply)
 
       return result
     })
