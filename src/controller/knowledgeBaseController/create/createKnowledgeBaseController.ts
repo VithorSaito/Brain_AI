@@ -1,10 +1,10 @@
 import z from "zod";
 import { FastifyReply, FastifyRequest } from "fastify";
-import { KnowledgeBaseUseCase } from "../../usecases/knowledgeBaseUseCase/knowledgeBaseUsecase";
+import { CreateKnowledgeBaseUseCase } from "../../../usecases/knowledgeBaseUseCase/create/createKnowledgeBaseUseCase";
 
 
-export class KnowledgeBaseController {
-  constructor(private knowledgeBaseUseCase: KnowledgeBaseUseCase) { }
+export class CreateKnowledgeBaseController {
+  constructor(private createKnowledgeBaseUseCase: CreateKnowledgeBaseUseCase) { }
 
   async execute(request: FastifyRequest, reply: FastifyReply) {
 
@@ -18,7 +18,7 @@ export class KnowledgeBaseController {
       status: z.string()
     }).parse(request.body)
 
-    const result = await this.knowledgeBaseUseCase.execute(bodySchema)
+    const result = await this.createKnowledgeBaseUseCase.execute(bodySchema)
 
     return reply.send(result).status(201)
 

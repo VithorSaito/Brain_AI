@@ -1,5 +1,5 @@
-import { poll } from "../../lib/aws";
-import { openai } from "../../lib/openai";
+import { poll } from "../../../lib/aws"
+import { openai } from "../../../lib/openai"
 
 interface RowsResponse {
   id: number,
@@ -7,7 +7,7 @@ interface RowsResponse {
   similarity: string
 }
 
-export class QuestionUseCase {
+export class CreateQuestionUseCase {
   constructor() { }
 
   async execute(question: string) {
