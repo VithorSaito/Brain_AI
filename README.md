@@ -6,13 +6,14 @@ O fluxo do sistema consiste na geração e armazenamento de embeddings das entra
 
 <img width="901" height="597" alt="image" src="https://github.com/user-attachments/assets/3a6316d0-2d7f-4a2c-a669-6737fd2785df" />
 
-<h2>Features ⚙️<h2>
-  - [x] Integração e implementação do OpenAI
-  - [x] Conexão com DB na AWS
-  - [] Autenticação JWT
-  - [] Websocket
-  - [] Teste unitários
-  - [] Interface Visual com EJS
+<h2>Features ⚙️</h2>
+
+- [x] Integração e implementação do OpenAI
+- [x] Conexão com DB na AWS
+- [ ] Autenticação JWT
+- [ ] Websocket
+- [ ] Testes unitários
+- [ ] Interface Visual com EJS
 
 
 
