@@ -1,4 +1,4 @@
-import { CreateKnowledgeBaseController } from "./createKnowledgeBaseController";
-import { createKnowledgeBaseUseCase } from "../../../usecases/knowledgeBaseUseCase/create";
+import { CreateKnowledgeController } from "./createKnowledge.controller";
+import { createKnowledgeUseCase } from "../../../usecases/knowledgeBaseUseCase/create";
 
-export const createKnowledgeBaseController = new CreateKnowledgeBaseController(createKnowledgeBaseUseCase)
+export const createKnowledgeController = new CreateKnowledgeController(createKnowledgeUseCase)

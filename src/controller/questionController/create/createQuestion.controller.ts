@@ -1,6 +1,7 @@
-import { FastifyReply, FastifyRequest } from "fastify";
 import z from "zod";
-import { CreateQuestionUseCase } from "../../usecases/questionUseCase/create/createQuestionUseCase";
+import { FastifyReply, FastifyRequest } from "fastify";
+
+import { CreateQuestionUseCase } from "../../../usecases/questionUseCase/create/createQuestion.useCase";
 
 export class CreateQuestionController {
   constructor(private createQuestionUseCase: CreateQuestionUseCase) { }
