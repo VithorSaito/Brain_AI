@@ -1,18 +1,19 @@
-<h1>ChatBot OpenAI</h1>
+<h1>Retrieval Augmented Generation 📚</h1>
 
-O projeto consiste no desenvolvimento de um fluxo completo de funcionamento para um chatbot baseado em inteligência artificial, alimentado por uma base de conhecimento customizada.
+O projeto consiste no desenvolvimento de um sistema de Retrieval-Augmented Generation (RAG), cujo objetivo é extrair, processar e armazenar toda a base de conhecimento do GLPI em um repositório vetorial. A partir disso, o sistema utiliza técnicas de recuperação semântica e modelos de linguagem para gerar respostas precisas às perguntas dos usuários relacionadas aos conteúdos presentes nessa base.
 
-<img width="1507" height="788" alt="Captura de tela 2025-10-03 111438" src="https://github.com/user-attachments/assets/f5cd8a9b-a5cb-4cc9-b6d9-fa8ec494be2b" />
+O fluxo do sistema consiste na geração e armazenamento de embeddings das entradas da base de conhecimento, utilizando uma instância EC2 da AWS com PostgreSQL e a extensão pgvector (por ser um projeto prático não foi utilizado Aurora ou ElasticSearch). Em seguida, para cada pergunta enviada pelo usuário, é gerado um novo embedding que é comparado aos vetores previamente armazenados por meio de cálculo de similaridade do cosseno. Os registros com maior similaridade são retornados como contexto relevante. Por fim, esse contexto, juntamente com a pergunta original, é enviado a um modelo de IA para gerar a resposta mais adequada e coerente ao usuário.
 
-Por se tratar de um projeto <strong> experimental </strong>, optou-se por não utilizar serviços gerenciados da AWS (como Aurora ou ElasticSearch), devido ao custo associado.
-Em vez disso, foi provisionada uma instância EC2 configurada com PostgreSQL e a extensão pgvector, permitindo armazenar e consultar embeddings de forma eficiente.
+<img width="901" height="597" alt="image" src="https://github.com/user-attachments/assets/3a6316d0-2d7f-4a2c-a669-6737fd2785df" />
 
-Outro ponto de decisão arquitetural foi priorizar a simplicidade e otimização de custos em detrimento da performance, adotando a versão mais básica do fluxo conversacional do chatbot.
+<h2>Features ⚙️<h2>
+  - [x] Integração e implementação do OpenAI
+  - [x] Conexão com DB na AWS
+  - [] Autenticação JWT
+  - [] Websocket
+  - [] Teste unitários
+  - [] Interface Visual com EJS
 
-<h2>End points</h2>
 
-```/send_informations```
-Endpoint responsável por receber as mensagens enviadas pelo usuário, processando as dúvidas e retornando a resposta gerada pelo modelo.
 
-```/knowledge_base```
-Endpoint utilizado para ingestão de documentos e arquivos que serão integrados à base de conhecimento do chatbot, permitindo enriquecer as respostas de forma contextualizada.
+
