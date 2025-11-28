@@ -14,10 +14,12 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^24.5.2",
+    "@types/ws": "^8.18.1",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2"
   },
   "dependencies": {
+    "@fastify/websocket": "^11.2.0",
     "@tsconfig/node22": "^22.0.2",
     "@types/pg": "^8.15.5",
     "dotenv": "^17.2.2",

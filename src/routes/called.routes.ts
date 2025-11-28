@@ -12,9 +12,10 @@ export const calledRoutes = async (server: FastifyInstance) => {
       return result
 
     })
-    .post("/question", async (request, reply) => {
-      const result = await createQuestionController.execute(request, reply)
+    .get("/question", { websocket: true }, async (websocket, request) => {
+      const result = await createQuestionController.execute(websocket, request)
 
       return result
     })
+
 } 

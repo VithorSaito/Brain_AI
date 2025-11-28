@@ -1,20 +1,22 @@
-import z from "zod";
-import { FastifyReply, FastifyRequest } from "fastify";
+import { WebSocket } from "ws";
+import { FastifyRequest } from "fastify";
 
 import { CreateQuestionUseCase } from "../../../usecases/questionUseCase/create/createQuestion.useCase";
 
 export class CreateQuestionController {
   constructor(private createQuestionUseCase: CreateQuestionUseCase) { }
 
-  async execute(request: FastifyRequest, reply: FastifyReply) {
+  async execute(socket: WebSocket, request: FastifyRequest) {
 
-    const bodySchema = z.object({
-      question: z.string()
-    }).parse(request.body)
+    socket.on("message", async (message) => {
 
-    const result = await this.createQuestionUseCase.execute(bodySchema.question)
+      const text = message.toString()
 
-    return reply.send(result).code(200)
+      const result = await this.createQuestionUseCase.execute(text)
+
+      socket.send(result)
+
+    })
 
   }
 }

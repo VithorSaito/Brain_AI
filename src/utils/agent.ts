@@ -1,4 +1,5 @@
 import OpenAI from "openai";
+import { env } from "../env";
 
 export class Agent {
   constructor(private agent: OpenAI) { }
@@ -15,7 +16,7 @@ export class Agent {
 
   async generateResponse(prompt: string): Promise<string> {
     const response = await this.agent.responses.create({
-      model: 'gpt-5-2025-08-07',
+      model: env.GPT_MODEL,
       input: prompt
     })
 
