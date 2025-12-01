@@ -1,23 +1,23 @@
-import { poll } from "../../lib/aws";
+import { PrismaClient } from "../../database/src/generated/prisma/client";
+import { KnowLedgeDTO } from "../../dto/knowledgeDTO";
 
 export class CosineSimilarityRepository {
+  constructor(private database: PrismaClient) { }
 
-  async execute(embeddingQuestion: number[]) {
+  async execute(embeddingQuestion: string) {
 
-    const result = await poll.query(`
-            SELECT id,
+    const result: KnowLedgeDTO[] = await this.database.$queryRaw`
+      SELECT id,
             title,
             problem,
             solution,
-            1 - (embedding_context <=> $1) AS similarity
-            FROM knowledge_base
-            WHERE solution != ''
-            ORDER BY similarity DESC
-            LIMIT 7;
-            `,
-      [`[${embeddingQuestion.join(',')}]`]
-    )
+            1 - (embedding_context <=> ${embeddingQuestion}) AS similarity
+      FROM knowledge
+      WHERE solution != ''
+      ORDER BY similarity DESC
+      LIMIT 7;
+    `
 
-    return result.rows
+    return result
   }
 }
