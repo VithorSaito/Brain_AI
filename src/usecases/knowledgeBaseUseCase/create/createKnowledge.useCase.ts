@@ -1,4 +1,3 @@
-import { poll } from "../../../lib/aws"
 import { agent } from "../../../lib/agent";
 
 import { KnowLedgeDTO } from "../../../dto/knowledgeDTO";
