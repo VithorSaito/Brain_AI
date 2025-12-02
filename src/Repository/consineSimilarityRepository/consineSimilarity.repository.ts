@@ -1,4 +1,4 @@
-import { PrismaClient } from "../../database/src/generated/prisma/client";
+import { PrismaClient } from "../../database/src/database/generated/prisma/client";
 import { KnowLedgeDTO } from "../../dto/knowledgeDTO";
 
 export class CosineSimilarityRepository {

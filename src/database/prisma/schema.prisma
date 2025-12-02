@@ -20,10 +20,11 @@ model knowledge {
 }
 
 model users {
-  id         Int      @id @default(autoincrement())
-  username   String   @unique @db.VarChar(255)
-  email      String   @unique @db.VarChar(255)
-  password   String   @db.VarChar(255)
-  created_at DateTime @default(now()) @db.Timestamp(6)
-  updated_at DateTime @default(now()) @db.Timestamp(6)
+  id           Int      @id @default(autoincrement())
+  username     String   @db.VarChar(255)
+  email        String   @unique @db.VarChar(255)
+  password     String   @db.VarChar(255)
+  created_at   DateTime @default(now()) @db.Timestamp(6)
+  updated_at   DateTime @default(now()) @db.Timestamp(6)
+  refreshToken String?  @db.VarChar(255)
 }
