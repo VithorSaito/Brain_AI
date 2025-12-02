@@ -52,6 +52,16 @@ src/
 
 ### POST /knowLedge
 
+Header
+
+```json
+{
+  "Authorization": "Bearer TOKEN"
+}
+```
+
+Body
+
 ```json
 {
   "title": "string",
@@ -72,6 +82,16 @@ Resposta
 
 ### POST /question
 
+Header
+
+```json
+{
+  "Authorization": "Bearer TOKEN"
+}
+```
+
+Body
+
 ```json
 {
   "question": "string"
@@ -83,6 +103,44 @@ Resposta
 ```json
 {
   "response": "string"
+}
+```
+
+### POST /register
+
+```json
+{
+  "username": "string",
+  "email": "string",
+  "password": "string",
+  "confirmPassword": "string"
+}
+```
+
+Resposta
+
+```json
+{
+  "accessToken": "string",
+  "refreshToken": "string",
+  "username": "string"
+}
+```
+
+### POST /login
+
+```json
+{
+  "email": "string",
+  "password": "string"
+}
+```
+
+Resposta
+
+```json
+{
+  "accessToken": "string"
 }
 ```
 
