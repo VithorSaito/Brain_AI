@@ -17,7 +17,7 @@ export class CreateKnowledgeUseCase {
       return saveInDatabase
 
     } catch (error) {
-      throw new Error("Error saving knowledge in database")
+      throw new Error("Erro ao salvar conhecimento na base de dados!");
     }
 
   }

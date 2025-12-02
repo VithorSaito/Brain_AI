@@ -153,3 +153,5 @@ Resposta
 - [ ] Persistencia das conversas com Redis
 - [ ] Testes unitários
 - [ ] Interface Visual com EJS
+- [ ] Swagger
+- [ ] CI/CD

@@ -1,5 +1,6 @@
 import { compare } from "bcrypt";
 import { LoginRepository } from "../../../repository/authRepository/login/login.repository";
+import { Unauthorized } from "../../../middleware/error/Unauthorized";
 
 export class LoginUseCase {
   constructor(private loginRepository: LoginRepository) { }
@@ -9,13 +10,13 @@ export class LoginUseCase {
     const findUser = await this.loginRepository.findUser(email);
 
     if (!findUser) {
-      throw new Error("Usuário não encontrado!");
+      throw new Unauthorized("Senha ou Email inválidos!");
     }
 
     const validatePassword = await compare(password, findUser.password);
 
     if (!validatePassword) {
-      throw new Error("Senha inválida!");
+      throw new Unauthorized("Senha ou Email inválidos!");
     }
 
     return findUser.username

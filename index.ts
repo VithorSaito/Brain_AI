@@ -5,10 +5,12 @@ import ws from "@fastify/websocket"
 
 import auth from "./src/plugin/auth"
 import { routes } from "./src/routes/@.routes"
+import { errorHandler } from "./src/middleware/ErrorHandler"
 
 const Fastify = fastify()
 
 auth(Fastify)
+errorHandler(Fastify)
 
 Fastify.register(ws)
 

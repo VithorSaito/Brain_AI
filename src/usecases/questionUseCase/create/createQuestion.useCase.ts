@@ -34,9 +34,15 @@ export class CreateQuestionUseCase {
     })
 
     const prompt = Prompts.rag(format, message.toString())
-    const response = await agent.generateResponse(prompt)
 
-    return response
+    try {
+      const response = await agent.generateResponse(prompt)
+
+      return response
+    }
+    catch (err) {
+      throw new Error("Erro ao gerar resposta!");
+    }
 
   }
 }
