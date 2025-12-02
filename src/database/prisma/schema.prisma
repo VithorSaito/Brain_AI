@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/database/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model knowledge {
+  id                Int                    @id @default(autoincrement())
+  title             String?                @db.VarChar(255)
+  category          String?
+  problem           String?
+  solution          String?
+  environment       String?
+  embedding_context Unsupported("vector")?
+  created_at        DateTime?              @default(now()) @db.Timestamp(6)
+  updated_at        DateTime?              @default(now()) @db.Timestamp(6)
+}
+
+model users {
+  id         Int      @id @default(autoincrement())
+  username   String   @unique @db.VarChar(255)
+  email      String   @unique @db.VarChar(255)
+  password   String   @db.VarChar(255)
+  created_at DateTime @default(now()) @db.Timestamp(6)
+  updated_at DateTime @default(now()) @db.Timestamp(6)
+}

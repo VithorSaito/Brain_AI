@@ -92,7 +92,8 @@ Resposta
 - [x] Integração e implementação do OpenAI
 - [x] Conexão com DB na AWS
 - [ ] Autenticação JWT
-- [ ] Websocket
+- [x] Websocket
+- [ ] Persistencia das conversas com Redis
 - [ ] Testes unitários
 - [ ] Interface Visual com EJS
 

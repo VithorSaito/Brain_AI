@@ -1,24 +1,30 @@
+import { PrismaClient } from "../../database/src/generated/prisma/client";
 import { KnowLedgeDTO } from "../../dto/knowledgeDTO";
-import { poll } from "../../lib/aws";
 
 export class SaveKnowledgeRepository {
-  async execute(data: KnowLedgeDTO, embeddingResult: number[]) {
+  constructor(private database: PrismaClient) { }
 
-    const result = await poll.query(`
-        INSERT INTO knowledge_base (title, category, problem, solution, environment, embedding_context)
-        VALUES ($1, $2, $3, $4, $5, $6)
-      `,
-      [
-        data.title,
-        data.category,
-        data.problem,
-        data.solution,
-        data.environment,
-        `[${embeddingResult}]`,
-      ]
-    );
+  async execute(data: KnowLedgeDTO, embeddingResult: string) {
 
-    return result.rows
+    const result = await this.database.$queryRaw`
+      INSERT INTO knowledge (
+        title,
+        category,
+        problem,
+        solution,
+        environment,
+        embedding_context
+      )
+      VALUES (
+        ${data.title},
+        ${data.category},
+        ${data.problem},
+        ${data.solution},
+        ${data.environment},
+        ${embeddingResult}::vector
+      )
+    `
+    return result
 
   }
 }

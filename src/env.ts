@@ -6,5 +6,6 @@ export const env = z.object({
   AWS_DB_USER: z.string(),
   AWS_DB_PASSWORD: z.string(),
   AWS_DB_NAME: z.string(),
-  GPT_MODEL: z.string().default('gpt-5-nano')
+  GPT_MODEL: z.string().default('gpt-5-nano'),
+  DATABASE_URL: z.string()
 }).parse(process.env)
