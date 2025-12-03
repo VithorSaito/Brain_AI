@@ -21,11 +21,14 @@ npm install
 
 # Configurar váriaveis de ambiente no .env
 
-OPENAI_API_KEY=""
-AWS_DB_HOST=""
-AWS_DB_USER=""
-AWS_DB_PASSWORD=""
-AWS_DB_NAME=""
+  OPENAI_API_KEY= "string",
+  AWS_DB_HOST= "string",
+  AWS_DB_USER= "string",
+  AWS_DB_PASSWORD= "string",
+  AWS_DB_NAME= "string",
+  GPT_MODE= "string",
+  DATABASE_URL= "string",
+  JWT_SECRET= "string",
 
 # Iniciar o projeto
 
