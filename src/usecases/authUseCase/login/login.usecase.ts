@@ -1,6 +1,6 @@
 import { compare } from "bcrypt";
 import { LoginRepository } from "../../../repository/authRepository/login/login.repository";
-import { Unauthorized } from "../../../middleware/error/Unauthorized";
+import { Unauthorized } from "../../../errors/Unauthorized";
 
 export class LoginUseCase {
   constructor(private loginRepository: LoginRepository) { }

@@ -5,7 +5,7 @@ import ws from "@fastify/websocket"
 
 import auth from "./src/plugin/auth"
 import { routes } from "./src/routes/@.routes"
-import { errorHandler } from "./src/middleware/ErrorHandler"
+import { errorHandler } from "./src/errors/ErrorHandler"
 import { redis } from "./src/lib/redis"
 
 const Fastify = fastify()

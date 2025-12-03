@@ -1,7 +1,7 @@
 import bcrpt from "bcrypt";
 import { RegisterDTO } from "../../../dto/registerDTO";
 import { RegisterRepository } from "../../../repository/authRepository/register/register.repository";
-import { BadRequest } from "../../../middleware/error/BadRequest";
+import { BadRequest } from "../../../errors/BadRequest";
 
 export class RegisterUseCase {
   constructor(private registerRepository: RegisterRepository) { }
