@@ -11,8 +11,9 @@ export class CreateQuestionController {
     socket.on("message", async (message) => {
 
       const text = message.toString()
+      const { username } = request.user as { username: string }
 
-      const result = await this.createQuestionUseCase.execute(text)
+      const result = await this.createQuestionUseCase.execute(text, username)
 
       socket.send(result)
 

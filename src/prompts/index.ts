@@ -1,5 +1,7 @@
+import { historyPrompt } from "./history";
 import { ragBase } from "./ragBase";
 
 export const Prompts = {
-  rag: ragBase
+  rag: ragBase,
+  history: historyPrompt
 }
