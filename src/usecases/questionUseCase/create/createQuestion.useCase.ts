@@ -1,6 +1,6 @@
 import { KnowLedgeDTO } from "../../../dto/knowledgeDTO"
 import { cache } from "../../../utils/cache"
-import { agent } from "../../../lib/agent"
+import { agent } from "../../../utils/agent"
 import { Prompts } from "../../../prompts"
 import { CosineSimilarityRepository } from "../../../repository/consineSimilarityRepository/consineSimilarity.repository"
 

@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import { env } from "../env";
+import { env } from "../../env";
 
 export class Agent {
   constructor(private agent: OpenAI) { }

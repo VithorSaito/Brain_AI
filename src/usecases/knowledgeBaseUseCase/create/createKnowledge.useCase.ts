@@ -1,4 +1,4 @@
-import { agent } from "../../../lib/agent";
+import { agent } from "../../../utils/agent";
 
 import { KnowLedgeDTO } from "../../../dto/knowledgeDTO";
 import { SaveKnowledgeRepository } from "../../../repository/saveKnowledgeRepository/saveKnowledge.repository";
