@@ -150,7 +150,7 @@ Resposta
 - [x] Conexão com DB na AWS
 - [x] Autenticação JWT
 - [x] Websocket
-- [ ] Persistencia das conversas com Redis
+- [x] Persistencia das conversas com Redis
 - [ ] Testes unitários
 - [ ] Interface Visual com EJS
 - [ ] Swagger
