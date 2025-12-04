@@ -5,11 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsx watch ./index.ts"
+    "dev": "tsx watch ./src/main/app.ts"
   },
   "prisma": {
-    "schema": "./src/database/prisma/schema.prisma"
+    "schema": "./src/infrastructure/database/prisma/schema.prisma"
   },
   "author": "Vithor Mitsuyoshi Saito",
   "license": "ISC",
