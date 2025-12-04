@@ -40,14 +40,13 @@ npm run dev
 
 ```bash
 src/
- ├── controller/
- ├── dto/
- ├── lib/
- ├── prompts/
- ├── repository/
- ├── routes/
- ├── usecases/
- └── utils/
+ ├── application  > casos de usos da utilizando as interfaces
+ ├── domain >  entidades e regras de negocio
+ ├── infrastructure > servicos externo / implementações
+ ├── interfaces > controladores
+ ├── main > inicialização da aplicação
+ ├── shared > utilitarios globais
+ └── types > tipagem
 
 ```
 
